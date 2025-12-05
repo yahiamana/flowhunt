@@ -3,6 +3,7 @@ import { BarChart3, TrendingUp, DollarSign } from "lucide-react"
 
 import { auth } from "@/lib/auth"
 import { getAnalytics } from "@/actions/get-analytics"
+import { formatPrice } from "@/lib/format"
 import { Chart } from "./_components/chart"
 import { Card, CardContent, CardHeader, CardTitle as CardTitleUI } from "@/components/ui/card"
 
@@ -36,7 +37,7 @@ const AnalyticsPage = async () => {
              <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-             <div className="text-2xl font-bold">{totalRevenue} DZD</div>
+             <div className="text-2xl font-bold">{formatPrice(totalRevenue)}</div>
              <p className="text-xs text-muted-foreground">
                 Lifetime earnings
              </p>

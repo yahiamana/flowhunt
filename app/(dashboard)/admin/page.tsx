@@ -3,6 +3,7 @@ import { BookOpen, CheckCircle, Users, DollarSign, TrendingUp, Clock, ArrowUpRig
 
 import { auth } from "@/lib/auth"
 import { db } from "@/lib/db"
+import { formatPrice } from "@/lib/format"
 import { Card, CardContent, CardHeader, CardTitle as CardTitleUI } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -27,7 +28,7 @@ export default async function AdminDashboard() {
   const stats = [
     {
       label: "Total Revenue",
-      value: `${totalPurchases * 100} DZD`, // Simplification
+      value: formatPrice(totalPurchases * 100), // Simplification
       subtext: "+20.1% from last month",
       icon: DollarSign,
       trend: "up",
